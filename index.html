@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deadlock Toolkit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Deadlock Prevention and Recovery Toolkit</h1>
+<p class="subtitle">Banker's Algorithm · Deadlock Detection</p>
+
+<div class="container">
+
+    <div class="left-panel">
+
+        <div class="box">
+            <h2>System Setup</h2>
+            <label>Processes:
+                <input type="number" id="numProcesses" min="1" value="3">
+            </label><br>
+            <label>Resources:
+                <input type="number" id="numResources" min="1" value="3">
+            </label><br>
+            <button id="btnInitSystem">Initialize</button>
+        </div>
+
+        <div class="box" id="totalBox" style="display:none;">
+            <h2>Total Resources</h2>
+            <div id="totalResourcesInputs"></div>
+        </div>
+
+        <div class="box" id="matricesBox" style="display:none;">
+            <h2>Max Matrix</h2>
+            <div id="maxMatrixInputs"></div>
+
+            <h2>Allocation Matrix</h2>
+            <div id="allocationMatrixInputs"></div>
+
+            <button id="btnUpdateSystem">Update System</button>
+        </div>
+
+        <div class="box" id="requestBox" style="display:none;">
+            <h2>Request</h2>
+            <select id="requestProcess"></select>
+            <div id="requestVectorInputs"></div>
+            <button id="btnRequest">Request Resource</button>
+        </div>
+
+        <div class="box" id="deadlockBox" style="display:none;">
+            <button id="btnDetectDeadlock">Detect Deadlock</button>
+            <button id="btnRecover">Recover</button>
+        </div>
+
+    </div>
+
+    <div class="right-panel">
+
+        <div class="box">
+            <h2>Need Matrix</h2>
+            <div id="needMatrixView"></div>
+
+            <h2>Available</h2>
+            <div id="availableView"></div>
+
+            <h2>Safe Sequence</h2>
+            <p id="safeSequenceView"></p>
+        </div>
+
+        <div class="box">
+            <h2>Resource Allocation Graph</h2>
+            <canvas id="ragCanvas" width="500" height="250"></canvas>
+        </div>
+
+        <div class="box">
+            <h2>Log</h2>
+            <div id="logArea" class="log-area"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
